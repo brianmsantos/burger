@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
 const app = express();
 // let connection = require("./config/connection.js")
-const router = require("./controllers/burger_controllers.js")
+const router = require("./controllers/burger_controller.js")
 
 const PORT = process.env.PORT || 1337;
 
@@ -46,7 +46,7 @@ app.get("/burgers", function(req, res) {
 });
 
 //Updates the burgers
-app.put("/movies/:id", function(req, res) {
+app.put("/burgers/:id", function(req, res) {
     connection.query("UPDATE burgers SET burger_names = ? WHERE id = ?", [req.body.burger_name, req.params.id], function(err, result) {
         if (err) {
             //Generic failure notice
