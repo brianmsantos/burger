@@ -1,7 +1,10 @@
-let connection = require("./connection.js");
+const mysql = require('mysql')
 
-function whatevs() {
-    console.log("hello");
-};
-
-whatevs();
+module.exports = {
+    all: (tableName) => {}, //sql shit in that function
+    one: (tableName, id) => {
+            return new Promise((resolve, reject) => {
+                resolve(data)
+            })
+        } //sql querying 
+}
