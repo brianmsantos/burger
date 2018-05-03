@@ -1,4 +1,4 @@
-const Orm = require("./config/orm.js")
+const Orm = require("../config/orm.js")
     // module.exports = {
     //     all: Orm.all('TableName'),
     //     get_by_id: (id) => { Orm.one('Cats(table)', id) }

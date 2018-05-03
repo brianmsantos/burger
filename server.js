@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-const routes = require("routes")(express.router)
+const routes = require("./routes/routes.js")(express.router)
 app.use(routes)
 
 //Supposed to render all the burger_names here.

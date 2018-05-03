@@ -1,4 +1,4 @@
-const burger = require("./models/burger.js")
+const burger = require("../models/burger.js")
     //CRUD//INDEX is all 
 module.exports = {
     index: () => {
