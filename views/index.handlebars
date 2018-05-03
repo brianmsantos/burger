@@ -1,0 +1,26 @@
+{{!-- Setup the index.handlebars to have the template that Handlebars can render onto.
+Create a button in index.handlebars that will submit the user input into the database. --}}
+<h1>Eat-Da-Burger</h1>
+
+<ul>
+    {{#each burger_name}}
+    <li>
+        <p>
+            {{this.id}}.{{this.burger_name}}
+        </p>
+    </li>
+    {{/each}}
+</ul>
+
+<h2>Enter new burger.</h2>
+<form id="addburger" class="button-size">
+<textarea type="text" name="burger"></textarea>
+<button type="submit">Add burger!</button>
+</form>
+
+<script type ="text/javascript">
+$("#addburger").on("submit", function(event){
+    event.preventDefault();
+
+})
+</script>
