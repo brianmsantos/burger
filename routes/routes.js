@@ -5,6 +5,13 @@ module.exports = (router) => {
         burgerController.read(req.params.id)
             .then((data) => {
                 res.render('index', data)
-            })
-    })
+            });
+    });
 }
+
+router.get("/:id", (req, res) => {
+    burgerController.read(req, params.id)
+        .then((data) => {
+            res.render("burger_profile", data)
+        });
+});

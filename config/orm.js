@@ -1,4 +1,4 @@
-const mysql = require('mysql')
+const mysql = require("mysql")
 
 module.exports = {
     all: (tableName) => {}, //sql shit in that function
