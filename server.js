@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
 const app = express();
 // let connection = require("./config/connection.js")
-const router = require("./controllers/burger_controller.js")
+// const router = require("./controllers/burger_controller.js")
 
 const PORT = process.env.PORT || 1337;
 
@@ -14,8 +14,9 @@ app.use(bodyParser.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-const routes = require("./routes/routes.js")(express.router)
-app.use(routes)
+// Import routes 
+const routes = require("./controllers/burger_controller.js");
+app.use(routes);
 
 //Supposed to render all the burger_names here.
 app.get("/", function(req, res) {
