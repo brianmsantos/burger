@@ -9,7 +9,7 @@ var burger = require("./../models/burger.js");
 router.get("/", function(req, res) {
     burger.all(function(data) {
         var hbsObject = {
-            cats: data
+            burgers: data
         };
         console.log(hbsObject);
         res.render("index", hbsObject);
@@ -17,19 +17,17 @@ router.get("/", function(req, res) {
 });
 
 router.post("/api/burgers", function(req, res) {
-    burger.create(["name", "sleepy"], [req.body.name, req.body.sleepy], function(result) {
+    burger.create(["burger_name"], [req.body.burger_name], function(result) {
         // Send back the ID of the new quote
         res.json({ id: result.insertId });
     });
 });
 
 router.put("/api/burgers/:id", function(req, res) {
-    var condition = "id = " + req.params.id;
-
-    console.log("condition", condition);
-
+    let condition = "id = " + req.params.id;
+    console.log("condition Burger ID", condition);
     burger.update({
-            sleepy: req.body.sleepy
+            devoured: true
         },
         condition,
         function(result) {
@@ -44,19 +42,3 @@ router.put("/api/burgers/:id", function(req, res) {
 });
 // Export routes for server.js to use.
 module.exports = router;
-
-
-
-// const burger = require("../models/burger.js")
-//CRUD//INDEX is all 
-// module.exports = {
-//     index: () => {
-//         burger.all()
-//     },
-//     create: (data) => {},
-//     read: (id) => {
-//         burger.get_by_id(id);
-//     },
-//     update: (data) => {},
-//     delete: (data) => {},
-//}
